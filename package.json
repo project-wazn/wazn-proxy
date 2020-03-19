@@ -1,0 +1,32 @@
+{
+  "name": "wazn-proxy",
+  "version": "0.9.0",
+  "description": "WAZN proxy for Node.js Pool",
+  "main": "proxy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/project-wazn/wazn-proxy.git"
+  },
+  "author": "Multiple",
+  "license": "EUPL-1.2",
+  "bugs": {
+    "url": "https://github.com/project-wazn/wazn-proxy/issues"
+  },
+  "homepage": "https://github.com/project-wazn/wazn-proxy#readme",
+  "dependencies": {
+    "async": "2.1.4",
+    "bignum": "^0.12.5",
+    "circular-buffer": "1.0.2",
+    "debug": "2.6.9",
+    "express": "4.14.0",
+    "minimist": "1.2.0",
+    "moment": "2.21.0",
+    "request": "^2.79.0",
+    "uuid": "3.0.1",
+    "cryptoforknote-util": "git+https://github.com/MoneroOcean/node-cryptoforknote-util.git#v3.0.0",
+    "cryptonight-hashing": "git+https://github.com/uPlexa/node-cryptonight-hashing.git"
+  }
+}

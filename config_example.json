@@ -1,0 +1,59 @@
+{
+  "pools": [
+    {
+      "hostname": "swim.wazn.io",
+      "port": 10799,
+      "ssl": false,
+      "allowSelfSignedSSL": false,
+      "share": 100,
+      "username": "WaznPw2YaCNaPT2rqdtQUpTa8Hw2sRrLq72bga53eHDEfEHfMUfca2W2kFBUqQm51gexz5BNjMARLHEqGtjgLLWE2XXxyvZJDs",
+      "password": "proxy",
+      "keepAlive": true,
+      "algo": "cryptonight_upx",
+      "cnVariant": 1,
+      "blob_type": "0",
+      "default": true
+    }
+  ],
+  "listeningPorts": [
+    {
+      "port": 5555,
+      "ssl": false,
+      "diff": 5000
+    },
+    {
+      "port": 6666,
+      "ssl": false,
+      "diff": 50000
+    },
+    {
+      "port": 7777,
+      "ssl": false,
+      "diff": 500000
+    }
+  ],
+  "bindAddress": "0.0.0.0",
+  "developerShare": 0,
+  "daemonAddress": "127.0.0.1:11787",
+  "accessControl": {
+    "enabled": false,
+    "controlFile": "accessControl.json"
+  },
+  "httpEnable": false,
+  "httpAddress": "127.0.0.1",
+  "httpPort": "8081",
+  "httpUser": "",
+  "httpPass": "",
+  "addressWorkerID": false,
+  "minerInactivityTime": 120,
+  "keepOfflineMiners": 0,
+  "refreshTime": 30,
+  "theme": "light",
+  "coinSettings": {
+    "xmr":{
+      "minDiff": 5000,
+      "maxDiff": 1000000,
+      "shareTargetTime": 20
+    }
+  }
+}
