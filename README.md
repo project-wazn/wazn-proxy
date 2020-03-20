@@ -161,4 +161,5 @@ In your `packages.json`, do a `npm install`, and it should pass.
 ```
 Licensed under the EUPL-1.2
 Copyright (c) 2020 WAZN Project
+Copyright (c) 2019 uPlexa  
 ```
