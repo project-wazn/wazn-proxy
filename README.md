@@ -11,19 +11,19 @@ Supports:
 * cn-extremelite
 * cn-upx2
 
-## Deployment via Installer on Ubuntu 16.04
+## Deployment via Installer on Ubuntu 18.04
 
-1. Create a user 'nodeproxy' and assign a password (or add a SSH key. If you prefer that, you should already know how to do it).
+1. Create a user 'waznproxy' and assign a password (or add a SSH key. If you prefer that, you should already know how to do it).
 
 ```bash
-useradd -d /home/nodeproxy -m -s /bin/bash nodeproxy
-passwd nodeproxy
+useradd -d /home/waznproxy -m -s /bin/bash waznproxy
+passwd waznproxy
 ```
 
-2. Add your user to `/etc/sudoers`, this must be done so the script can sudo up and do it's job.  We suggest passwordless sudo.  Suggested line: `<USER> ALL=(ALL) NOPASSWD:ALL`.  Our sample builds use: `nodeproxy ALL=(ALL) NOPASSWD:ALL`
+2. Add your user to `/etc/sudoers`, this must be done so the script can sudo up and do it's job.  We suggest passwordless sudo.  Suggested line: `<USER> ALL=(ALL) NOPASSWD:ALL`.  Our sample builds use: `waznproxy ALL=(ALL) NOPASSWD:ALL`
 
 ```bash
-echo "nodeproxy ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+echo "waznproxy ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 ```
 
 3. Log in as the **NON-ROOT USER** you just created and run the [deploy script](https://raw.githubusercontent.com/project-wazn/wazn-proxy/master/install.sh).  This is very important!  This script will install the proxy to whatever user it's running under!
@@ -34,7 +34,7 @@ curl -L https://raw.githubusercontent.com/project-wazn/wazn-proxy/master/install
 
 3. Once it's complete, copy `config_example.json` to `config.json` and edit as desired.
 4. Run: `source ~/.bashrc`  This will activate NVM and get things working for the following pm2 steps.
-8. Once you're happy with the settings, go ahead and start all the proxy daemon, commands follow.
+5. Once you're happy with the settings, go ahead and start all the proxy daemon, commands follow.
 
 ```shell
 cd ~/wazn-proxy/
@@ -136,19 +136,10 @@ for all initial miner connections via proxy.
 
 	* forknote2   - Bytecoin forks like Turtlecoin, IPBC
 
-## Switching from other xmr-node-proxy repository
-
-	```bash
-	cd xmr-node-proxy
-	git remote set-url origin https://github.com/MoneroOcean/xmr-node-proxy.git && git pull -X theirs --no-edit && npm update
-	```
-
 ## Known Issues
 
 VMs with 512Mb or less RAM will need some swap space in order to compile the C extensions for node.
 Bignum and the CN libraries can chew through some serious memory during compile.
-In regards to this here is guide for T2.Micro servers: [Setup of wazn-proxy on free tier AWS t2.micro instance](http://moneroocean.blogspot.com/2017/10/setup-of-xmr-node-proxy-on-free-tier.html).
-There is also more generic proxy installation guide: [Complete guide to install and configure wazn-proxy on a Ubuntu 16.04 VPS](https://tjosm.com/7689/install-xmr-node-proxy-vps/)
 
 If not running on an Ubuntu 16.04 system, please make sure your kernel is at least 3.2 or higher, as older versions will not work for this.
 

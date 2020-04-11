@@ -10,7 +10,7 @@ const uuidV4 = require('uuid/v4');
 const support = require('./lib/support.js')();
 global.config = require('./config.json');
 
-const PROXY_VERSION = "0.3.4";
+const PROXY_VERSION = "0.9.2";
 const DEFAULT_ALGO      = [ "cn-upx" ];
 const DEFAULT_ALGO_PERF = { "cn-upx": 1 };
 
@@ -423,30 +423,7 @@ function balanceWorkers(){
             }
         }
     }
-    /*
-    poolStates now contains an object that looks approximately like:
-    poolStates = {
-        'xmr':
-            {
-                'mine.xmrpool.net': {
-                    'miners': {},
-                    'hashrate': 0,
-                    'percentage': 20,
-                    'devPool': false,
-                    'amtChange': 0
-                 },
-                 'donations.xmrpool.net': {
-                     'miners': {},
-                     'hashrate': 0,
-                     'percentage': 0,
-                     'devPool': true,
-                     'amtChange': 0
-                 },
-                 'devPool': 'donations.xmrpool.net',
-                 'totalPercentage': 20
-            }
-    }
-     */
+
     for (let coin in poolStates){
         if(poolStates.hasOwnProperty(coin)){
             if (poolStates[coin].totalPercentage !== 100){
@@ -478,27 +455,7 @@ function balanceWorkers(){
             delete(poolStates[coin].activePoolCount);
         }
     }
-    /*
-     poolStates now contains an object that looks approximately like:
-     poolStates = {
-         'xmr':
-         {
-             'mine.xmrpool.net': {
-                 'miners': {},
-                 'hashrate': 0,
-                 'percentage': 100,
-                 'devPool': false
-             },
-             'donations.xmrpool.net': {
-                 'miners': {},
-                 'hashrate': 0,
-                 'percentage': 0,
-                 'devPool': true
-             },
-             'devPool': 'donations.xmrpool.net',
-         }
-     }
-     */
+
     for (let workerID in activeWorkers){
         if (activeWorkers.hasOwnProperty(workerID)){
             for (let minerID in activeWorkers[workerID]){
