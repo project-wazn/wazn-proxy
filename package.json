@@ -20,13 +20,21 @@
     "async": "2.1.4",
     "bignum": "^0.12.5",
     "circular-buffer": "1.0.2",
+    "cryptiles": "^4.1.3",
+    "cryptoforknote-util": "git+https://github.com/MoneroOcean/node-cryptoforknote-util.git#v3.0.0",
+    "cryptonight-hashing": "git+https://github.com/uPlexa/node-cryptonight-hashing.git",
     "debug": "2.6.9",
     "express": "4.14.0",
-    "minimist": "1.2.0",
+    "fresh": "^0.5.2",
+    "fstream": "^1.0.12",
+    "hoek": "^6.1.3",
+    "lodash": "^4.17.15",
+    "mime": "^2.4.4",
+    "minimist": "^1.2.5",
     "moment": "2.21.0",
-    "request": "^2.79.0",
-    "uuid": "3.0.1",
-    "cryptoforknote-util": "git+https://github.com/MoneroOcean/node-cryptoforknote-util.git#v3.0.0",
-    "cryptonight-hashing": "git+https://github.com/uPlexa/node-cryptonight-hashing.git"
+    "pm2": "^4.2.3",
+    "request": "^2.88.2",
+    "tar": "^6.0.1",
+    "uuid": "3.0.1"
   }
 }
