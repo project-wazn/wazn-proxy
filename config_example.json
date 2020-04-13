@@ -1,7 +1,7 @@
 {
   "pools": [
     {
-      "hostname": "dig.wazn.io",
+      "hostname": "pool.wazn.io",
       "port": 49999,
       "ssl": false,
       "allowSelfSignedSSL": false,

@@ -10,7 +10,7 @@ const uuidV4 = require('uuid/v4');
 const support = require('./lib/support.js')();
 global.config = require('./config.json');
 
-const PROXY_VERSION = "0.9.2";
+const PROXY_VERSION = "0.9.3-beta";
 const DEFAULT_ALGO      = [ "cn-upx" ];
 const DEFAULT_ALGO_PERF = { "cn-upx": 1 };
 
@@ -1166,7 +1166,7 @@ function activateHTTP() {
 			}
 			debug.misc("Authorization Header is: ", auth);
 			var tmp = auth.split(' ');
-	                var buf = new Buffer(tmp[1], 'base64');
+	                var buf = Buffer.from(tmp[1], 'base64');
         	        var plain_auth = buf.toString();
 			debug.misc("Decoded Authorization ", plain_auth);
 			var creds = plain_auth.split(':');
