@@ -2,14 +2,14 @@
   "pools": [
     {
       "hostname": "pool.wazn.io",
-      "port": 49999,
+      "port": 3333,
       "ssl": false,
       "allowSelfSignedSSL": false,
       "share": 100,
-      "username": "miningwalletaddress",
-      "password": "pickapass",
+      "username": "WaznPw2YaCNaPT2rqdtQUpTa8Hw2sRrLq72bga53eHDEfEHfMUfca2W2kFBUqQm51gexz5BNjMARLHEqGtjgLLWE2XXxyvZJDs",
+      "password": "waznproxy",
       "keepAlive": true,
-      "algo": "cryptonight-upx",
+      "algo": "cryptonight-wazn",
       "cnVariant": 1,
       "blob_type": "0",
       "default": true

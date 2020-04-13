@@ -10,9 +10,9 @@ const uuidV4 = require('uuid/v4');
 const support = require('./lib/support.js')();
 global.config = require('./config.json');
 
-const PROXY_VERSION = "0.9.3-beta";
-const DEFAULT_ALGO      = [ "cn-upx" ];
-const DEFAULT_ALGO_PERF = { "cn-upx": 1 };
+const PROXY_VERSION = "0.9.5-beta";
+const DEFAULT_ALGO      = [ "cn-wazn" ];
+const DEFAULT_ALGO_PERF = { "cn-wazn": 1 };
 
 /*
  General file design/where to find things.

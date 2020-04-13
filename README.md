@@ -6,8 +6,8 @@ WAZN Proxy
 WAZN proxy for Node.js Pool
 
 ## Works with:
-* cn-wazn1
-* cn-extremelite
+* cn-wazn
+* cn-ultralite
 * cn-upx2
 * and many more cn-?? algorithms
 
