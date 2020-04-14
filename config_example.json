@@ -48,7 +48,7 @@
   "minerInactivityTime": 120,
   "keepOfflineMiners": 0,
   "refreshTime": 30,
-  "theme": "light",
+  "theme": "dark",
   "coinSettings": {
     "xmr":{
       "minDiff": 5000,

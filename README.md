@@ -33,20 +33,18 @@ curl -L https://raw.githubusercontent.com/project-wazn/wazn-proxy/master/install
 ```
 This script will install the proxy to whatever user it's running under!
 
-**5.** In package.json change cryptonight-hashing link and is now pointed to `github.com/project-wazn/wazn-node-hashing.git#v1.0.0` and run: `npm update`.
+**5.** When complete, edit config.json per your needs. File is a copy of config_example.json and was created by install.sh.
 
-**6.** When complete, edit config.json per your needs. File is a copy of config_example.json and was created by install.sh.
+**6.** Run: `source ~/.bashrc`  This will activate NVM and get things working for the following pm2 steps.
 
-**7.** Run: `source ~/.bashrc`  This will activate NVM and get things working for the following pm2 steps.
-
-**8.** Once you're happy with the settings, go ahead and start all the proxy daemon, commands follow.
+**7.** Once you're happy with the settings, go ahead and start all the proxy daemon, commands follow.
 ```shell
 cd ~/wazn-proxy/
 pm2 start proxy.js --name=proxy --log-date-format="YYYY-MM-DD HH:mm:ss:SSS Z"
 pm2 save
 ```
 
-**9.** You can check the status of your proxy by either issuing `pm2 logs proxy`.  
+**8.** You can check the status of your proxy by either issuing `pm2 logs proxy`.  
 or using the pm2 monitor `pm2 monit`.
 
 ## Updating wazn-proxy
