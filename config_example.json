@@ -2,14 +2,14 @@
   "pools": [
     {
       "hostname": "dig.wazn.io",
-      "port": 49999,
+      "port": 4444,
       "ssl": false,
       "allowSelfSignedSSL": false,
       "share": 100,
-      "username": "miningwalletaddress",
-      "password": "pickapass",
+      "username": "WaznPw2YaCNaPT2rqdtQUpTa8Hw2sRrLq72bga53eHDEfEHfMUfca2W2kFBUqQm51gexz5BNjMARLHEqGtjgLLWE2XXxyvZJDs",
+      "password": "proxy",
       "keepAlive": true,
-      "algo": "cryptonight-upx",
+      "algo": "cryptonight-wazn",
       "cnVariant": 1,
       "blob_type": "0",
       "default": true
@@ -48,11 +48,11 @@
   "minerInactivityTime": 120,
   "keepOfflineMiners": 0,
   "refreshTime": 30,
-  "theme": "light",
+  "theme": "dark",
   "coinSettings": {
     "xmr":{
-      "minDiff": 5000,
-      "maxDiff": 1000000,
+      "minDiff": 10000,
+      "maxDiff": 2500000,
       "shareTargetTime": 20
     }
   }

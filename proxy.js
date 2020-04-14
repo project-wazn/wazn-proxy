@@ -10,9 +10,9 @@ const uuidV4 = require('uuid/v4');
 const support = require('./lib/support.js')();
 global.config = require('./config.json');
 
-const PROXY_VERSION = "0.9.2";
-const DEFAULT_ALGO      = [ "cn-upx" ];
-const DEFAULT_ALGO_PERF = { "cn-upx": 1 };
+const PROXY_VERSION = "0.9.8-rc";
+const DEFAULT_ALGO      = [ "cn-wazn" ];
+const DEFAULT_ALGO_PERF = { "cn-wazn": 1 };
 
 /*
  General file design/where to find things.
@@ -289,7 +289,7 @@ function Pool(poolData){
         this.sendData('login', {
             login: this.username,
             pass: this.password,
-            agent: 'xmr-node-proxy/' + PROXY_VERSION,
+            agent: 'wazn-proxy/' + PROXY_VERSION,
             "algo": Object.keys(this.algos),
             "algo-perf": this.algos_perf
         });
@@ -795,7 +795,7 @@ function handleNewBlockTemplate(blockTemplate, hostname){
         debug.pool('Storing the previous block template');
         pool.pastBlockTemplates.enq(pool.activeBlocktemplate);
     }
-    if (!blockTemplate.algo)      blockTemplate.algo = pool.coinFuncs.detectAlgo(pool.default_algo_set, 16 * parseInt(blockTemplate.blocktemplate_blob[0]) + parseInt(blockTemplate.blocktemplate_blob[1]));
+
     if (!blockTemplate.blob_type) blockTemplate.blob_type = pool.blob_type;
     pool.activeBlocktemplate = new pool.coinFuncs.MasterBlockTemplate(blockTemplate);
     for (let id in cluster.workers){
@@ -1264,7 +1264,7 @@ function activateHTTP() {
       res.writeHead(200, {'Content-type':'text/html'});
 			res.write(`
 <html lang="en"><head>
-	<title>XNP v${PROXY_VERSION} Hashrate Monitor</title>
+	<title>WAZN Proxy v${PROXY_VERSION} Hashrate Monitor</title>
 	<meta charset="utf-8">
   <meta name="mobile-web-app-capable" content="yes">
   <link rel="icon" sizes="192x192" href="${icon}">
@@ -1273,7 +1273,7 @@ function activateHTTP() {
     ${stylesheet}
 	</style>
 </head><body class="${global.config.theme}">
-    <div title="Toggle theme..."  onclick="theme(body)"><h1 class="header" unselectable="on" onselectstart="return false;" onmousedown="return false;">XNP v${PROXY_VERSION} Hashrate Monitor</h1></div>
+    <div title="Toggle theme..."  onclick="theme(body)"><h1 class="header" unselectable="on" onselectstart="return false;" onmousedown="return false;">WAZN Proxy v${PROXY_VERSION} Hashrate Monitor</h1></div>
     <div id="content">
     	<h2>Workers: ${totalWorkers}, Hashrate: ${totalHashrate}</h2>
     	${tablePool}
@@ -1495,7 +1495,7 @@ function checkActivePools() {
 // System Init
 
 if (cluster.isMaster) {
-    console.log("Xmr-Node-Proxy (XNP) v" + PROXY_VERSION);
+    console.log("WAZN Proxy v" + PROXY_VERSION);
     let numWorkers;
     try {
         let argv = require('minimist')(process.argv.slice(2));

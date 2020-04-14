@@ -21,8 +21,8 @@ cd ~
 git clone https://github.com/vermin/wazn-proxy
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 source ~/.nvm/nvm.sh
-nvm install v10.20.0
-nvm alias default v10.20.0
+nvm install v8.17.0
+nvm alias default v8.17.0
 cd ~/wazn-proxy
 npm install || exit 1
 npm install -g pm2
@@ -30,7 +30,7 @@ cp config_example.json config.json
 openssl req -subj "/C=IT/ST=Pool/L=Daemon/O=Mining Pool/CN=mining.proxy" -newkey rsa:2048 -nodes -keyout cert.key -x509 -out cert.pem -days 36500
 cd ~
 pm2 status
-sudo env PATH=$PATH:`pwd`/.config/nvm/versions/node/v10.20.0/bin `pwd`/.config/nvm/versions/node/v10.20.0/lib/node_modules/pm2/bin/pm2 startup systemd -u $CURUSER --hp `pwd`
+sudo env PATH=$PATH:`pwd`/.config/nvm/versions/node/v8.17.0/bin `pwd`/.config/nvm/versions/node/v8.17.0/lib/node_modules/pm2/bin/pm2 startup systemd -u $CURUSER --hp `pwd`
 sudo chown -R $CURUSER. ~/.pm2
 echo "Installing pm2-logrotate in the background!"
 pm2 install pm2-logrotate
